@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Your Suggested Restaurants in Provo";
+}
+
+@model IEnumerable<BestProvoRestaurants.Models.UserRestaurant>
+
+<div class="text-center">
+    <div class="bg-dark text-white">
+        <h1 class="display-2">Your Restaurants:</h1>
+    </div>
+    <br />
+    <div class="bg-light text-white">
+        <table class="table text-white">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Restaurant</th>
+                    <th scope="col">Favorite Dish</th>
+                    <th scope="col">Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    @foreach (BestProvoRestaurants.Models.UserRestaurant UserR in Model)
+                    {
+                        <tr>
+                            <td scope="row">@UserR.UserName</td>
+                            <td scope="row">@UserR.RestaurantName</td>
+                            <td scope="row">@UserR.FavoriteDish</td>
+                            <td scope="row">@UserR.Phone</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+    <br /><br />
+
+    <button class="btn btn-dark" asp-action="SuggestRestaurant">Add to the List</button>
+</div>

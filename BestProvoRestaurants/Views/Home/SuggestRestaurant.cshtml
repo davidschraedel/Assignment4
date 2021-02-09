@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Suggest a Restaurant Favorite";
+}
+
+@model BestProvoRestaurants.Models.UserRestaurant
+
+<div class="text-center">
+    <div class="bg-dark text-white">
+        <h1 class="display-2">What's One of Your Favorite Restaurants in Provo?</h1>
+    </div>
+
+    <br /><br />
+    <div >
+        <form asp-action="SuggestRestaurant" method="post">
+            <label asp-for="UserName">Your Name: </label>
+            <input asp-for="UserName" />
+            <br />
+            <label asp-for="RestaurantName">Restaurant Name: </label>
+            <input asp-for="RestaurantName" />
+            <br />
+            <label asp-for="FavoriteDish">Favorite Dish From Restaurant: </label>
+            <input asp-for="FavoriteDish" />
+            <br />
+            <label asp-for="Phone">Restaurant Phone #: </label>
+            <input asp-for="Phone" />
+            <br />
+            <input class="btn btn-dark" type="submit" value="Add Restaurant" />
+            <br />
+            <div asp-validation-summary="All" class="list-unstyled"></div>
+        </form>
+
+    </div>
+</div>
