@@ -11,9 +11,9 @@ namespace BestProvoRestaurants.Models
 
         public static IEnumerable<UserRestaurant> ConcatSuggestRestaurants => suggestedRests;
 
-        public static void AddRestaurant(UserRestaurant restaurant)
+        public static void AddRestaurant(UserRestaurant Restaurant)
         {
-            suggestedRests.Add(restaurant);
+            suggestedRests.Add(Restaurant);
         }
     }
 }

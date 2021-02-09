@@ -12,7 +12,7 @@ namespace BestProvoRestaurants.Models
         public string UserName { get; set; }
         [Required]
         public string RestaurantName { get; set; }
-        public string FavoriteDish { get; set; } = "It's all tasty!";
+        public string FavoriteDish { get; set; }
         [Required]
         [Phone]
         public string Phone { get; set; }

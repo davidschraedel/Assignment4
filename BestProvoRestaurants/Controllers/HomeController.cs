@@ -43,10 +43,11 @@ namespace BestProvoRestaurants.Controllers
             //if input is valid
             if (ModelState.IsValid)
             {
+               
                 //save data
                 SuggestedRestaurantStorage.AddRestaurant(restaurant);
                 //return view for confirmation of the added film
-                return View("ListSuggestedRestaurants", restaurant);
+                return View("ListSuggestedRestaurants", SuggestedRestaurantStorage.ConcatSuggestRestaurants);
             }
             //if input is invalid
             else
@@ -58,7 +59,7 @@ namespace BestProvoRestaurants.Controllers
 
         public IActionResult ListSuggestedRestaurants()
         {
-            return View();
+            return View(SuggestedRestaurantStorage.ConcatSuggestRestaurants);
         }
 
 
