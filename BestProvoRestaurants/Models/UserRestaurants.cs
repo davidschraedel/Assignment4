@@ -14,7 +14,8 @@ namespace BestProvoRestaurants.Models
         public string RestaurantName { get; set; }
         public string FavoriteDish { get; set; }
         [Required]
-        [Phone]
+        //[DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\([\d]{3}\) [\d]{3}-[\d]{4}$", ErrorMessage = "Phone # must be in correct format: (###) ###-####")]
         public string Phone { get; set; }
 
     }

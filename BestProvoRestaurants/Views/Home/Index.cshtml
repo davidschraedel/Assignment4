@@ -5,7 +5,9 @@
     ViewData["Title"] = "Top Restaurants in Provo";
 }
 
-@model IEnumerable<TopRestaurant>
+<!--model IEnumerable<TopRestaurant>-->
+
+@model  IEnumerable<string>
 
 
 <div class="text-center">
@@ -17,36 +19,45 @@
     </div>
     <br /><br />
 
-    <div class="bg-dark text-white">
-        <br />
-        <h4>The Top 5:</h4>
-        <br />
-        <table class="table text-white">
-            <thead>
+          <div class="bg-dark text-white">
+              <br />
+              <h4>The Top 5:</h4>
+              <br />
+              <ul class="list-unstyled">
+                  @foreach (string r in Model)
+                  {
+                      <li>@r</li>
+                      <br />
+                  }
+
+              </ul>
+              <!--
+    <table class="table text-white">
+        <thead>
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Restaurant</th>
+                <th scope="col">Favorite Dish</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Website</th>
+            </tr>
+        </thead>
+        <tbody>
+            foreach (TopRestaurant TopR in Model)
+            {
                 <tr>
-                    <th scope="col">Rank</th>
-                    <th scope="col">Restaurant</th>
-                    <th scope="col">Favorite Dish</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Website</th>
+                    <td scope="row">TopR.Rank</td>
+                    <td scope="row">TopR.Name</td>
+                    <td scope="row">TopR.FavoriteDish</td>
+                    <td scope="row">TopR.Address</td>
+                    <td scope="row">TopR.Phone</td>
+                    <td scope="row"><a>TopR.Website</a></td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (TopRestaurant TopR in Model)
-                {
-                    <tr>
-                        <td scope="row">@TopR.Rank</td>
-                        <td scope="row">@TopR.Name</td>
-                        <td scope="row">@TopR.FavoriteDish</td>
-                        <td scope="row">@TopR.Address</td>
-                        <td scope="row">@TopR.Phone</td>
-                        <td scope="row">@TopR.Website</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>-->
+          </div>
 
 
     <br /><br />

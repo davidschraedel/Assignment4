@@ -14,7 +14,7 @@ namespace BestProvoRestaurants.Models
         public string Name { get; set; }
         [Required]
         public string Address { get; set; }
-        public string FavoriteDish { get; set; } = "It's all tasty!";
+        public string FavoriteDish { get; set; } = "it\'s all tasty!";
         public string Phone { get; set; }
         public string Website { get; set; } = "Coming soon";
 

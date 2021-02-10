@@ -20,12 +20,25 @@ namespace BestProvoRestaurants.Controllers
 
         public IActionResult Index()
         {
-            //deal with nulls here using ?? ------------------FIXME-----------------------
-            List<TopRestaurant> restaurantList = new List<TopRestaurant>();
+            //List<TopRestaurant> restaurantList = new List<TopRestaurant>();
+            //foreach (TopRestaurant topR in TopRestaurant.GetTopRestaurants())
+            //{
+            //    restaurantList.Add(topR);
+            //}
+            //return View(restaurantList);
+            List<string> restaurantList = new List<string>();
 
-            foreach (TopRestaurant topR in TopRestaurant.GetTopRestaurants())
+            foreach (TopRestaurant TopR in TopRestaurant.GetTopRestaurants())
             {
-                restaurantList.Add(topR);
+                if (TopR.FavoriteDish == "it\'s all tasty!")
+                {
+                    restaurantList.Add($"#{TopR.Rank}: {TopR.Name}, where {TopR.FavoriteDish} - {TopR.Address}, {TopR.Phone}, {TopR.Website}");
+                }
+                else
+                {
+                    restaurantList.Add($"#{TopR.Rank}: {TopR.Name}, with the favorite dish \"{TopR.FavoriteDish}\" - {TopR.Address}, {TopR.Phone}, {TopR.Website}");
+                }
+                
             }
 
             return View(restaurantList);
@@ -43,7 +56,6 @@ namespace BestProvoRestaurants.Controllers
             //if input is valid
             if (ModelState.IsValid)
             {
-               
                 //save data
                 SuggestedRestaurantStorage.AddRestaurant(restaurant);
                 //return view for confirmation of the added film
