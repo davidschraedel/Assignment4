@@ -17,17 +17,16 @@
     <div class="bg-info text-white">
         <h3 class="align-text-top">Find the Top Restaurants in Provo</h3>
     </div>
-    <br /><br />
+    <br />
 
           <div class="bg-dark text-white">
               <br />
               <h4>The Top 5:</h4>
               <br />
-              <ul class="list-unstyled">
+              <ul class="list-unstyled list-group">
                   @foreach (string r in Model)
                   {
-                      <li>@r</li>
-                      <br />
+                      <li class="list-group-item bg-dark">@Html.Raw(r)</li>
                   }
 
               </ul>

@@ -32,11 +32,11 @@ namespace BestProvoRestaurants.Controllers
             {
                 if (TopR.FavoriteDish == "it\'s all tasty!")
                 {
-                    restaurantList.Add($"#{TopR.Rank}: {TopR.Name}, where {TopR.FavoriteDish} - {TopR.Address}, {TopR.Phone}, {TopR.Website}");
+                    restaurantList.Add($"#{TopR.Rank}: {TopR.Name}, where {TopR.FavoriteDish} - {TopR.Address}, {TopR.Phone}, <a href=\"{ TopR.Website}\" target=\"_blank\">{TopR.Website}</a><br />");
                 }
                 else
                 {
-                    restaurantList.Add($"#{TopR.Rank}: {TopR.Name}, with the favorite dish \"{TopR.FavoriteDish}\" - {TopR.Address}, {TopR.Phone}, {TopR.Website}");
+                    restaurantList.Add($"#{TopR.Rank}: {TopR.Name}, with the favorite dish \"{TopR.FavoriteDish}\" - {TopR.Address}, {TopR.Phone}, <a href=\"{ TopR.Website}\" target=\"_blank\">{TopR.Website}</a><br />");
                 }
                 
             }
